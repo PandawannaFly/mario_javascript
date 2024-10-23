@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mario Game_Ha nguyen</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="mario-game" id="container">
+        <div class="scorebar">
+            <p>
+                <span class="topline-mario">MARIO</span>
+                <span id="bottomline-score">000000</span>
+                <span id="bottomline-coin">
+                    <img src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Coin.gif" height="40px"> 
+                    x <span id="updateCoins">00</span>
+                </span>
+            </p>
+        </div>
+        <div id="background"></div>
+        <div id="foreground" class="layer"></div>
+        <div id="obstacles">
+            <div class="obstacle" style="left: 1392px; bottom: 100px; height: 98px;"></div>
+            <div class="obstacle" style="left: 1886px; bottom: 100px; height: 156px;"></div>
+        </div>
+        <div id="coins">
+            <div class="coin" style="left: 300px; bottom: 200px;">
+                <img src="https://itc.yananas.com/git/mario/assets/coin.gif" alt="coin"/>
+            </div>
+            <div class="coin" style="left: 600px; bottom: 200px;">
+                <img src="https://itc.yananas.com/git/mario/assets/coin.gif" alt="coin"/>
+            </div>
+        </div>
+        <div id="plants" class="layer"></div>
+        <div id="mountains" class="layer"></div>
+        <div id="clouds" class="layer"></div>
+        <div id="mario" class="lookingRight"></div>
+    </div>
+
+    <script src ="script.js">
+    
+    </script>
+</body>
+</html>

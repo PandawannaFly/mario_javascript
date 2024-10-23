@@ -1,0 +1,162 @@
+html, body{
+    font-family: 'Press Start 2P', cursive;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0; 
+    padding: 0;
+}
+.mario-game {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-family: sans-serif;
+    height: 715px;
+}
+.mario-game #background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #6b88ff;
+    z-index: 1;
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.1s linear;
+    background-size: cover!important;
+}
+
+#foreground {
+    background: url("https://itc.yananas.com/git/mario/assets/mario_layer_1.gif");
+    z-index: 4;
+}
+
+#plants {
+    background: url("https://itc.yananas.com/git/mario/assets/mario_layer_2.gif");
+    z-index: 3;
+}
+
+#mountains {
+    background: url("https://itc.yananas.com/git/mario/assets/mario_layer_3.gif");
+    z-index: 2;
+}
+
+#clouds {
+    background: url("https://itc.yananas.com/git/mario/assets/mario_layer_4.gif");
+    z-index: 1;
+}
+
+.mario-game #mario {
+    position: absolute;
+    left: 100px;
+    bottom: 100px;
+    height: 72px;
+    width: 71px;
+    z-index: 3;
+    background: url(https://itc.yananas.com/git/mario/assets/mario.png) left center;
+    background-size: 1200px;
+    background-repeat: no-repeat;
+    background-position-y: 25px;
+}
+
+#mario.jumping {
+    animation: jump 1s ease 0s 1 normal;
+}
+
+@keyframes jump {
+    0%{
+        transform: translateY(0);
+        background-position-x: -1055px;
+    }
+    20%{
+        transform: translateY(0);
+    }
+    40%{
+        transform: translateY(-120px);
+    }
+    50%{
+        transform: translateY(0);
+    }
+    60%{
+        transform: translateY(-15px);
+    }
+    80%{
+        transform: translateY(0);
+        background-position-x: -1055px
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+#mario.lookingLeft {
+    background-position-x: -518px;
+}
+
+#mario.lookingRight {
+    background-position-x: -610px;
+}
+
+#mario.runningRight {
+    animation: rightRunning 0.5s steps(3) infinite;
+    background-position-x: -700px;
+}
+
+#mario.runningLeft {
+    animation: leftRunning 0.5s steps(3) infinite;
+    background-position-x: -430px;
+}
+
+@keyframes rightRunning{
+    100%{background-position-x: -965px;}
+}
+
+@keyframes leftRunning{
+    100%{background-position-x: -165px;}
+}
+
+.obstacle {
+    position: absolute;
+    width: 76px;
+    /* height: 80px; */
+    background: green;
+    z-index: 3;
+}
+
+.coin {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    z-index: 3;
+}
+
+.coin img {
+    width: 100%;
+    height: 100%;
+}
+
+.scorebar {    
+    position: absolute;
+    height: 120px;
+    width: 100%;    
+    z-index: 10;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 180%;
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    line-height: 0.2;
+}
+
+.hidden {
+    display: none !important;
+}
