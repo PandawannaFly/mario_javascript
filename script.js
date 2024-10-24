@@ -213,8 +213,23 @@ const mario = document.getElementById("mario");
     // Start the game loop
     gameLoop();
 
-    // Background music
-    const music = new Audio('https://itc.yananas.com/git/mario/assets/overworld.mp3');
-    music.loop = true;
-    music.volume = 0.3;
-    music.play();
+   // Background music setup
+const music = new Audio('https://itc.yananas.com/git/mario/assets/overworld.mp3');
+music.loop = true;
+music.volume = 0.3;
+music.play();
+
+// Sound toggle button
+const soundButton = document.getElementById('soundButton');
+let soundOn = true; // variable to track sound state
+
+soundButton.addEventListener('click', () => {
+    if (soundOn) {
+        music.pause(); // Pause the music
+        soundButton.textContent = 'Sound Off'; // Update button text
+    } else {
+        music.play(); // Play the music
+        soundButton.textContent = 'Sound On'; // Update button text
+    }
+    soundOn = !soundOn; // Toggle sound state
+});
